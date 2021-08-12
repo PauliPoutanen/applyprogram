@@ -1,0 +1,188 @@
+.navbar-custom {background-color: rgba(221,72,20); font-size:30px;font-family: 'Racing Sans One' !important; }
+/* brandin ja tekstin väri */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text{color: rgb(250, 250, 250);}
+
+/* linkin väri */
+.navbar-custom .navbar-nav .nav-link {
+ color: rgb(255, 255, 255);
+}
+/* aktiivisen & hover-linkin väri */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+ color: #0a0a0a;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+    
+.dropdown-menu {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+  margin-top: 0px !important;
+  width: 100% !important;
+}
+.nav-item .dropdown-menu a:hover {
+  color: white !important;
+  background:  rgba(42, 120, 221, 0.534) !important;
+  cursor: pointer;
+}
+
+
+
+h1 {text-align: center; font-size: 32px; color: #ffffff; padding:5px; background-color:rgba(221,72,20); font-family: 'Racing Sans One';}
+h2{text-align: center; font-size: 30px; color: #ffffff; padding:50px; border-radius: 16px; background-color:rgba(221, 74, 20, 0.534); font-family: 'Racing Sans One';}
+h3{font-family: 'Racing Sans One', cursive; margin:0;}
+h7 {font-family: 'Racing Sans One', cursive; margin:0; background-color:rgba(221, 74, 20, 0.493);padding: 10px;
+border-radius: 15px; font-size: 18px; }
+
+
+#liikenne{background-color:rgba(255, 255, 255, 0.904); margin: 0; font-size: 14px;}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  * {
+    box-sizing: border-box;
+    }
+    * {
+      box-sizing: border-box;
+      }
+      * {
+        box-sizing: border-box;
+        }
+        * {
+          box-sizing: border-box;
+          }
+ 
+    
+  
+    
+.flex-container {
+display: flex;
+flex-direction: row;
+font-size: 20px;
+text-align: center;
+}
+
+.flex-item-left {
+background-color: none;
+padding: 10px;
+flex: 50%;
+}
+.flex-item-right {
+  background-color: none;
+  padding: 10px;
+  flex: 50%;
+  }
+  .flex-container2 {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    text-align: center;
+    }
+.flex-item-left2 {background-color: rgb(82, 166, 235);
+padding: 10px;
+flex: 50%;
+font-size: small;
+}
+.flex-item-right2 {
+background-color:rgb(10, 147, 238);
+padding: 10px;
+flex: 50%;
+font-size: small;
+}
+
+.flex-container21 {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  text-align: center;
+  }
+.flex-item-left21 {background-color: rgb(37, 223, 99);
+padding: 10px;
+flex: 50%;
+font-size: small;
+}
+.flex-item-right21 {
+background-color:rgb(77, 221, 20);
+padding: 10px;
+flex: 50%;
+font-size: small;
+}
+.flex-container44 {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  text-align: center;
+  }
+.flex-item-left44 {
+  padding: 10px;
+  flex: 50%;
+  font-size: small;
+}
+   .flex-item-right44 {
+  background-color:rgb(255, 255, 255);
+  padding: 10px;
+  flex: 50%;
+  font-size: x-large;
+  }
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+
+  .flex-container, .flex-container2, .flex-container21, .flex-container44 {
+  flex-direction: column; margin:0 !important;
+}
+}
+
+
+#show, #hide, #hide2{font-size:25px; padding: 13px; font-family: 'Racing Sans One', cursive !important; background-color:rgb(221, 74, 20); color: white; border-radius: 10px; border: 2px; border-color: whitesmoke;}
+#liikenne {text-align: left; padding: 7px; border-radius: 15px;}
+span {
+  content: "\26A0";
+  font-size: 200%;
+}
+section
+  * {
+    box-sizing: border-box;
+  }
+  
+  .flex-containerhd {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  .flex-item-lefthd {
+  
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-righthd {
+ 
+    padding: 10px;
+    flex: 50%;
+  }
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-containerhd {
+    flex-direction: column;
+  }
+}
+.containera {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer{text-align: center; background-color: black; color: #ffffff;}
+#viesti{text-align: left; background-color: rgba(199, 240, 241, 0.801);}

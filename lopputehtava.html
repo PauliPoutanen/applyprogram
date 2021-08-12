@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="fi">
+    <title>Paulin Digitekniikat Lopputyö</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
+  
+  <link rel="stylesheet" href="lopputehtava.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Monofett&family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <script>
+      $(document).ready(function(){
+          $("#hide").click(function(){
+            $("p").hide(800);
+            $("h3").hide(800);
+          });
+       });
+    </script>
+    <script>
+      $(document).ready(function(){
+          $("#show").click(function(){
+            $("p").show(800);
+            $("h3").show(800);
+          });
+       });
+    </script>
+    <style>
+      header {  background-image: url('kuvatkuvat/uusinkuva.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;}
+      </style>
+  </head>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#"></a>
+    <img src="kuvatkuvat/logo.png" height="42px;" alt="Harley-Logo">
+  </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" ariacontrols="navbarSupportedContent" aria-expanded="true" arialabel="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+    <a class="nav-link" href="#">Etusivu<span class="sr-only">
+    (current)</span></a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="#manual">Fix' Gear</a>
+      </li>
+     <li class="nav-item">
+     <a class="nav-link" href="#chat">Chat</a>
+     </li>
+     <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+    role="button" data-toggle="dropdown" aria-haspopup="true" ariaexpanded="false">
+     Parhaat MP-huollot
+     </a>
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+     <a class="dropdown-item" href="http://www.pratkapaja.fi/">PrätkäPaja</a>
+     <a class="dropdown-item" href="https://www.hotbike.fi/hotbike.html">Hot Bike</a>
+     <div class="dropdown-divider"></div>
+     <a class="dropdown-item" href="https://www.harley-davidson.com/fi/fi/index.html">HD-Finland</a>
+     </div>
+     </li>
+     <li class="nav-item">
+     <a class="nav-link disabled" href="#"></a>
+     </li>
+     </ul>
+    
+     </div>
+     </nav>
+<body>
+ <header>
+<div class="flex-container">
+  <div class="flex-item-left">
+    <br><br><h3></h3><br><button id="show">Avaa liikennetiedotteet</button>
+  <div class="container mt-3">
+  <div class="flex-item-right">
+   <h3><button id="hide">Sulje tiedotteet</button></h3><br><br>
+  <p id="liikenne"></p>
+  <script>
+    $(document).ready(function(){
+        $("#hide2").click(function(){
+          $("p").hide(800);
+          $("h3").hide(800);
+         
+        });
+     });
+  </script>
+  <h3><button id="hide2">Sulje tiedotteet</button></h3><br>
+    <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+</header>
+<script>
+$.getJSON("https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT", function(data){
+var items=[];
+var tieto=data.features;
+$.each(tieto, function (key, d){
+    var tapahtuma=d.properties.announcements;
+$.each(tapahtuma, function (key2, d2){
+    var tarkka=d2.features;
+$.each(tarkka, function (key3, d3){
+items.push("<p><span>&#9888;</span><b>" +d3.name + "</b></p>");
+items.push("<p><b>Missä: </b>" + d2.location.description+"</p>");
+items.push("<p><b>Lisätietoja:</b> " +d2.comment + "</p>");
+items.push("<p><b>Tiedote annettu:</b> " +d2.timeAndDuration.startTime+ "</p>");
+}) 
+})
+})
+$("#liikenne").append(items.join(""));
+});
+</script>
+</div></div>
+
+
+
+<h1>AjoSää</h1>
+<div class="flex-container2">
+  <div class="flex-item-left2"></div>
+  <div class="flex-item-right2"></div>
+  </div>
+  <div class="flex-container21">
+    <div class="flex-item-left21"></div>
+    <div class="flex-item-right21"></div>
+    </div>
+
+</div>
+</div>
+<script>
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?lang=fi&q=helsinki&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28", function(data){
+var items=[];
+items.push("<h4>"+data.name+"</h4>");
+items.push("<h4>"+data.weather[0].description+"</h4>");
+items.push("<h4>"+data.main.temp+" ℃</h4>");
+var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+if (kuva !== undefined) {
+items.push( "<img src=" + kuva +
+" class=liikenne>" );}
+$(".flex-item-left2").append(items.join(""));
+});
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?lang=fi&q=tampere&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28", function(data){
+var items=[];
+items.push("<h4>"+data.name+"</h4>");
+items.push("<h4>"+data.weather[0].description+"</h4>");
+items.push("<h4>"+data.main.temp+" ℃</h4>");
+var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+if (kuva !== undefined) {
+items.push( "<img src=" + kuva +
+" class=liikenne>" );}
+$(".flex-item-right2").append(items.join(""));
+});
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?lang=fi&q=turku&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28", function(data){
+var items=[];
+items.push("<h4>"+data.name+"</h4>");
+items.push("<h4>"+data.weather[0].description+"</h4>");
+items.push("<h4>"+data.main.temp+" ℃</h4>");
+var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+if (kuva !== undefined) {
+items.push( "<img src=" + kuva +
+" class=liikenne>" );}
+$(".flex-item-right21").append(items.join(""));
+});
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?lang=fi&q=rovaniemi&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28", function(data){
+var items=[];
+items.push("<h4>"+data.name+"</h4>");
+items.push("<h4>"+data.weather[0].description+"</h4>");
+items.push("<h4>"+data.main.temp+" ℃</h4>");
+var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+if (kuva !== undefined) {
+items.push( "<img src=" + kuva +
+" class=liikenne>" );}
+$(".flex-item-left21").append(items.join(""));
+});
+
+</script>
+
+<section id="manual">
+
+  <div class="flex-containerhd">
+    
+    <div class="flex-item-lefthd"><h1>H-D World</h1>
+      <div class="containera">
+      <a href="https://www.harley-davidson.com/fi/fi/index.html"><img src="kuvatkuvat/h3.jpg" alt="HTML tutorial" style="width:100%"></a>
+      <div class="centered"><h7>H-D™</h7></div></div>
+    </div>
+      <div class="flex-item-righthd"><h1>H-D Parts</h1>
+        <div class="containera">
+        <a href="https://www.kahlekuningas.net"><img src="kuvatkuvat/h4.jpg" alt="HTML tutorial" style="width:100%"></a>
+        <div class="centered"><h7>H-D Parts</h7></div></div>
+        </div>
+      </div>
+      
+</section>
+
+
+
+
+
+
+
+
+<div class="flex-container44">
+  <div class="flex-item-left44">
+<h1 id="otsikko">MoottoriChat</h1>
+    <div class="form-outline w-50 mb-4">
+     
+
+      <form onsubmit="return false">
+
+        <textarea id="nimi" name="nimi" rows="1" cols="70" placeholder="Kirjoita nimesi tähän :) "></textarea>
+        <textarea id ="msg" name="msg" rows="4" cols="70" placeholder="Kirjoita viesti tähän :) "></textarea><br>
+        <button onclick="laheta()">Lähetä</button>
+    </form>
+  </div></div>
+  
+  
+  <div class="flex-item-right44">
+    <h1 id="otsikko2">Pulinat</h1>
+      
+      <div id="viestiketju"></div></div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyATgR-gUG_lTXuKGmHXnNi_A9aE0wWNDGs",
+    authDomain: "hakemusprojekti.firebaseapp.com",
+    databaseURL: "https://hakemusprojekti-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "hakemusprojekti",
+    storageBucket: "hakemusprojekti.appspot.com",
+    messagingSenderId: "186640875593",
+    appId: "1:186640875593:web:79c87fe0cd55ae49b63f98",
+    measurementId: "G-HS64700L77"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+var database = firebase.database();
+
+var fireHeading = document.getElementById("otsikko2");
+var firebaseHeadingRef = firebase.database().ref().child("heading");
+
+firebaseHeadingRef.on('value', function(datasnapshot){
+  fireHeading.innerText=datasnapshot.val();
+});
+
+function laheta(){
+var lahettaja = document.getElementById("nimi").value;
+var teksti = document.getElementById("msg").value;
+
+var firebaseRef = firebase.database().ref();
+firebaseRef.child("viestit").push().set({
+  "nimi":lahettaja,
+  "viesti":teksti
+});
+
+
+}
+
+var rootRef = firebase.database().ref().child('viestit');
+
+rootRef.on('child_added', snap =>{
+var viesti = snap.child("viesti").val();
+var nimi = snap.child("nimi").val();
+
+$("#viestiketju").append("<p>" + nimi + " : " + viesti + "</p>");
+
+})
+
+</script>
+
+
+
+
+
+
+<div id="chat"></div>
+  <footer>
+   <p> *** Digitekniikat-kurssin harjoitustyö Poutanen Pauli // AMKoodari Haaga-Helia kevät 2021. <br>
+  Kuvien © Harley-Davidson Motor Company *** Ajantasaiset säätiedot Openweathermap.org *** Ajantasaiset liikennetiedotteet: DigiTraffic.fi *** </p>
+  </footer>
+</body>
+</html>
